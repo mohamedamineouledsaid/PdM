@@ -1,0 +1,653 @@
+/* Industrial Control Room SCADA Design System - PI Vision, WinCC Unified, Experion & Ignition Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@600;700;800&family=Oxanium:wght@700;800&display=swap');
+
+:root {
+    --scada-bg: #090d16;
+    --scada-panel-bg: #111827;
+    --scada-card-bg: rgba(17, 24, 39, 0.85);
+    --scada-card-border: #1f293d;
+    --scada-card-hover: #2d3d5e;
+    --scada-text-bright: #f8fafc;
+    --scada-text-sub: #cbd5e1;
+    --scada-text-muted: #64748b;
+    --scada-accent-cyan: #00e5ff;
+    --scada-accent-lime: #00ff66;
+    --scada-accent-amber: #f59e0b;
+    --scada-accent-red: #ff3366;
+    --scada-accent-purple: #a855f7;
+    --scada-accent-blue: #3b82f6;
+}
+
+/* Main App Container */
+.stApp {
+    background-color: var(--scada-bg) !important;
+    color: var(--scada-text-bright) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.main .block-container {
+    padding-top: 0.8rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 98% !important;
+}
+
+/* Sidebar Industrial HMI Styling System */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #070b14 0%, #0d1322 100%) !important;
+    border-right: 1px solid var(--scada-card-border) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-testid="stSidebar"] .block-container {
+    padding: 1.2rem 0.9rem !important;
+}
+
+/* Custom Sidebar Scrollbar */
+[data-testid="stSidebar"]::-webkit-scrollbar {
+    width: 5px;
+}
+[data-testid="stSidebar"]::-webkit-scrollbar-track {
+    background: #060911;
+}
+[data-testid="stSidebar"]::-webkit-scrollbar-thumb {
+    background: #1f293d;
+    border-radius: 3px;
+}
+[data-testid="stSidebar"]::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+}
+
+/* Sidebar Brand Card - Redesigned Industrial Header */
+.sidebar-brand-card {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(7, 11, 20, 0.98) 100%);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-top: 3px solid var(--scada-accent-cyan);
+    border-radius: 8px;
+    padding: 18px 12px 16px 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.sidebar-logo-img {
+    max-height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 229, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo-img:hover {
+    transform: scale(1.03);
+}
+
+.sidebar-brand-main {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.sidebar-brand-platform {
+    font-family: 'Rajdhani', 'JetBrains Mono', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--scada-accent-cyan);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.sidebar-brand-field {
+    font-family: 'Rajdhani', 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.sidebar-brand-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid rgba(0, 255, 102, 0.35);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--scada-accent-lime);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.15);
+}
+
+/* Sidebar Section Titles */
+.sidebar-section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--scada-text-bright);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(31, 41, 61, 0.8);
+    margin-bottom: 10px;
+}
+
+.sidebar-section-badge {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--scada-text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Streamlit Widgets Label Override */
+[data-testid="stSidebar"] label {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    color: var(--scada-text-sub) !important;
+    text-transform: uppercase !important;
+    margin-bottom: 4px !important;
+}
+
+[data-testid="stSidebar"] div[data-baseweb="select"] > div {
+    background-color: #0c1322 !important;
+    border: 1px solid var(--scada-card-border) !important;
+    border-radius: 6px !important;
+    color: var(--scada-text-bright) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.85rem !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] div[data-baseweb="select"] > div:hover {
+    border-color: var(--scada-accent-cyan) !important;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Ensure Dropdown Portal Options match dark theme */
+div[data-baseweb="popover"], div[role="listbox"] {
+    background-color: #0b1220 !important;
+    border: 1px solid var(--scada-card-border) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+
+div[role="option"] {
+    background-color: #0b1220 !important;
+    color: var(--scada-text-sub) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.82rem !important;
+    padding: 8px 12px !important;
+}
+
+div[role="option"]:hover, div[role="option"][aria-selected="true"] {
+    background-color: #1a253b !important;
+    color: var(--scada-accent-cyan) !important;
+}
+
+/* Sidebar System Status Grid */
+.sidebar-status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.sidebar-status-card {
+    background: rgba(11, 18, 32, 0.7);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+.sidebar-status-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--scada-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.sidebar-status-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--scada-text-bright);
+}
+
+.sidebar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.sidebar-badge.status-connected {
+    background-color: rgba(0, 255, 102, 0.12);
+    color: var(--scada-accent-lime);
+    border: 1px solid rgba(0, 255, 102, 0.3);
+}
+
+.sidebar-badge.status-disconnected {
+    background-color: rgba(255, 51, 102, 0.12);
+    color: var(--scada-accent-red);
+    border: 1px solid rgba(255, 51, 102, 0.3);
+}
+
+.sidebar-badge.status-live {
+    background-color: rgba(0, 229, 255, 0.12);
+    color: var(--scada-accent-cyan);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+/* Sidebar Button Styling */
+[data-testid="stSidebar"] .stButton button {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    color: #ffffff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] .stButton button:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%) !important;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.5) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Sidebar Pipeline Grid */
+.sidebar-pipeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.pipeline-chip {
+    background: rgba(11, 18, 32, 0.8);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--scada-text-sub);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pipeline-chip .pipeline-check {
+    color: var(--scada-accent-lime);
+    font-weight: 800;
+}
+
+/* Sidebar Info Card */
+.sidebar-info-card {
+    background: rgba(11, 18, 32, 0.85);
+    border: 1px solid var(--scada-card-border);
+    border-left: 3px solid var(--scada-accent-cyan);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 16px;
+}
+
+.sidebar-info-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--scada-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.sidebar-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    margin-bottom: 4px;
+}
+
+.sidebar-info-label {
+    color: var(--scada-text-muted);
+}
+
+.sidebar-info-val {
+    font-weight: 700;
+    color: var(--scada-text-bright);
+}
+
+.sidebar-info-val.cyan {
+    color: var(--scada-accent-cyan);
+}
+
+.sidebar-info-val.lime {
+    color: var(--scada-accent-lime);
+}
+
+/* Industrial Header Banner */
+.scada-header-banner {
+    background: linear-gradient(135deg, #111827 0%, #060911 100%);
+    border: 1px solid var(--scada-card-border);
+    border-left: 6px solid var(--scada-accent-cyan);
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.scada-brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--scada-accent-cyan);
+    text-transform: uppercase;
+}
+
+.scada-main-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 800 !important;
+    color: var(--scada-text-bright) !important;
+    margin: 2px 0 0 0 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.scada-sub-title {
+    color: var(--scada-text-muted) !important;
+    margin: 2px 0 0 0 !important;
+    font-size: 0.82rem !important;
+}
+
+/* Header Status Badges Row */
+.header-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-connected {
+    background-color: rgba(0, 255, 102, 0.12);
+    color: var(--scada-accent-lime);
+    border: 1px solid rgba(0, 255, 102, 0.35);
+}
+
+.status-live {
+    background-color: rgba(0, 229, 255, 0.12);
+    color: var(--scada-accent-cyan);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 2s infinite;
+}
+
+.status-connected .status-dot { background-color: var(--scada-accent-lime); }
+.status-live .status-dot { background-color: var(--scada-accent-cyan); }
+
+@keyframes pulse-dot {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Section Title Boxes */
+.scada-section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--scada-text-bright);
+    letter-spacing: 0.5px;
+    margin: 18px 0 10px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--scada-card-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* SCADA KPI Cards */
+.kpi-card {
+    background: var(--scada-card-bg);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+    border-color: var(--scada-card-hover);
+    transform: translateY(-2px);
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.kpi-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--scada-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kpi-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.kpi-body {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.kpi-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--scada-text-bright);
+    line-height: 1.1;
+}
+
+.kpi-unit-tag {
+    font-size: 0.78rem;
+    color: var(--scada-text-muted);
+    margin-left: 3px;
+}
+
+/* HERO AI FORECAST PANEL */
+.hero-forecast-panel {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(6, 9, 17, 0.98) 100%);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 8px 0 18px 0;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.hero-big-card {
+    background: rgba(9, 13, 22, 0.8);
+    border: 2px solid var(--scada-accent-cyan);
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.12);
+}
+
+.hero-big-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* DIAGNOSTIC CARDS GRID */
+.diag-card {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+
+.diag-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--scada-text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.diag-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.diag-text {
+    font-size: 0.82rem;
+    color: var(--scada-text-sub);
+    line-height: 1.35;
+}
+
+/* PIPELINE STATUS WIDGET IN SIDEBAR */
+.pipeline-widget {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid var(--scada-card-border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 10px;
+}
+
+.pipeline-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--scada-text-sub);
+    margin-bottom: 4px;
+}
+
+.pipeline-check {
+    color: var(--scada-accent-lime);
+    font-weight: 800;
+}
+
+/* CONTROL ROOM FOOTER */
+.scada-footer {
+    background: rgba(11, 18, 30, 0.9);
+    border-top: 1px solid var(--scada-card-border);
+    padding: 10px 18px;
+    margin-top: 24px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--scada-text-muted);
+}
+
+/* Streamlit Overrides */
+div[data-baseweb="select"] > div {
+    background-color: #111827 !important;
+    border-color: var(--scada-card-border) !important;
+    color: var(--scada-text-bright) !important;
+    border-radius: 6px !important;
+}
+
+.stButton button {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    color: #ffffff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700 !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 6px !important;
+}
+
+.stDataFrame {
+    border: 1px solid var(--scada-card-border) !important;
+    border-radius: 6px !important;
+}
